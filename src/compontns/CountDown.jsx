@@ -6,8 +6,9 @@ import { ref, uploadBytes, deleteObject, getDownloadURL } from "firebase/storage
 
 export const CountDown = () => {
     const [time, setTime] = useState();
-    const [start, setStart] = useState(false);
+    const [start, setStart] = useState(true);
     const [end, setEnd] = useState(false);
+    const [loading, setLoading] = useState(true);
 
     const fetchFile = async () => {
         const fileRef = ref(storage, 'saved_date.txt');
@@ -17,16 +18,20 @@ export const CountDown = () => {
                     .then(response => response.text())
                     .then(textData => {
                         setTime(textData);
-                        // console.log(textData);
+                        setStart(true);
                     });
             })
             .catch((error) => {
                 console.log("file not found");
+                setStart(false);
             });
+        
     };
 
     useEffect(() => {
         fetchFile();
+        setTimeout(1000);
+        setLoading(false);
     }, [])
 
     const handleSubmit = async (e) => {
@@ -40,6 +45,8 @@ export const CountDown = () => {
             const blob = new Blob([content], { type: 'text/plain' });
             await uploadBytes(fileRef, blob);
             setStart(true);
+
+            fetchFile();
 
             console.log('File uploaded successfully!');
 
@@ -59,21 +66,25 @@ export const CountDown = () => {
         });
     }
 
-    console.log(time);
-
     return (
         <div className="">
             {start && time ? (
                 <div className="">
                     <Countdown date={time} renderer={TimeRenderer} />
-                    {/* <button onClick={handleSubmit}>Start</button>
-                    <button onClick={handleReset}>Reset</button> */}
                 </div>
 
             ) :
                 (
                     <div>
-                        <button onClick={handleSubmit}>Start</button>
+                        {!start ? (
+                            <div>
+                                <button onClick={handleSubmit}>Start</button>
+                            </div>
+                        ) : (
+                            <div>
+                                loading....
+                            </div>
+                        )}
                     </div>
                 )}
         </div>
