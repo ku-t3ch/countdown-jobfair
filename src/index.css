@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
+/* * {
   padding: 0;
   margin: 0;
 }
@@ -93,4 +93,6 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
-}
+} */
+
+

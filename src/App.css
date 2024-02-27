@@ -1,4 +1,4 @@
-#root {
+/* #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
@@ -53,4 +53,18 @@
   height: 100%;
   width: 100%;
   object-fit: cover;
+} */
+
+
+.boxTest {
+  width: 200px;
+  height: 200px;
+  background-color: #f0f0f0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin: 50px auto;
+}
+
+.box:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
