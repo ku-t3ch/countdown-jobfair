@@ -1,8 +1,13 @@
-# React + Vite
+# Tech Camp #1
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Build docker image
 
-Currently, two official plugins are available:
+```bash
+docker build . -t tech-camp
+```
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Run docker image
+
+```bash
+docker run -p 3000:3000 --name tech-camp tech-camp
+```

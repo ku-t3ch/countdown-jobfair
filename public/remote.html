@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KU Job Fair</title>
+    <link rel="icon" type="image/x-icon" href="/assets/logo.png">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+    <div class="video-container">
+        <video id="main-video" autoplay loop muted>
+            <source src="assets/bg.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div class="container">
+        <img id="tapLogo" class="tapLogo" onclick="chkbutton()" src="assets/Jobfair.png" width="600px"></img>
+        <span id="done"></span>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="/js/remote.js"></script>
+</body>
+
+</html>
