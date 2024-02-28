@@ -1,4 +1,4 @@
-# Tech Camp #1
+# KU Jobfair
 
 ## Build docker image
 
