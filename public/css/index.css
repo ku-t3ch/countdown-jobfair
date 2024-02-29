@@ -15,13 +15,17 @@
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
+.time {
+  font-size: 48px;
+}
+
 .video-container {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1;
+  z-index: 0;
   overflow: hidden;
 }
 
@@ -31,8 +35,26 @@
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 999;
+  z-index: 10;
   overflow: hidden;
+  transition: opacity 0.5s ease;
+}
+
+.video-container-3 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 20;
+  overflow: hidden;
+}
+
+.debug {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 90;
 }
 
 video {
@@ -44,6 +66,12 @@ video {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.time {
+  font-size: 256px;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .tapLogo { 
